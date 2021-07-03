@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Edit Post</h1>
+<form action="{{ url_for('edit', title=selected_post.title) }}" method="POST">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Post Title" name="title" value="{{ selected_post.title }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Post Content</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content" required>{{ selected_post.content }}</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+    
+</form>
+{% endblock content %}
